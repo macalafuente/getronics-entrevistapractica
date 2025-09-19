@@ -32,9 +32,8 @@ cypress
 
 1. Clonar el repositorio:
 
-```bash
-git clone <tu-repo-url>
-cd getronics
+git clone https://github.com/macalafuente/getronics-entrevistapractica.git
+cd getronics-entrevistapractica
 npm install
 
 Abrir el Test Runner de Cypress:
