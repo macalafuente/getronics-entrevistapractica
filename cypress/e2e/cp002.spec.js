@@ -1,9 +1,13 @@
+import HomePage from '../pages/Homepage.js';
 import Filtros from '../pages/Filtros.js';
 
 describe('CP002 - Aplicar filtros de equipos', () => {
   it('Deberia filtrar productos por 128GB y precio entre 200K y 300K', () => {
+    
+    const homePage = new HomePage();
     const filtros = new Filtros();
-    cy.visit('https://tiendaonline.movistar.com.ar');
+
+    homePage.visitarPagina();    
 
     filtros.seleccionarRangoPrecios('$ 0 - $ 300.000');
     filtros.seleccionarMemoria('128');

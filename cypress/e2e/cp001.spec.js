@@ -10,15 +10,14 @@ describe('CP001 - Validar cuotas en compra de equipo', () => {
     // Buscar el equipo
     homePage.visitarPagina();
     homePage.buscarProducto('A15');
-    homePage.clickBuscar();
 
     // Ingresar al Producto
-    productPage.verificarProducto();
+    productPage.entrarProducto('A15');
     
     // Verificar que sea el equipo correcto
-    productPage.verificarNombre();
+    productPage.verificarNombre('A15');
     
     // Verificar que se pueda pagar en 3 cuotas
-    productPage.verificarCuotas();
+    productPage.verificarCuotas('3 cuotas');
   });
 });

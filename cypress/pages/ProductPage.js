@@ -1,17 +1,34 @@
 class ProductPage {
   
-  verificarProducto() {
-    cy.get('a.product-link[href*="samsung-galaxy-a15-4g.html"]').click();
+  entrarProducto(nombre) {
+    cy.get('.product-item .name').contains(nombre).closest('a').click();
   }
 
-  verificarNombre() {
-    cy.get('span.base[data-ui-id="page-title-wrapper"]').should('be.visible').and('contain.text', 'A15');
+  verificarNombre(nombre) {
+    cy.get('span.base[data-ui-id="page-title-wrapper"]').should('be.visible').and('contain.text', nombre);
   }
   
-  verificarCuotas() {
-    cy.contains('3 cuotas sin interés').should('exist');
+  verificarCuotas(cantidad) {
+    cy.contains(cantidad).should('exist');
   } 
 
+  abrirMediosPago() {
+    cy.get('#open-installments-modal').click();
+  }
+
+  seleccionarBanco(banco) {
+    cy.get('#inputbank').type(banco);
+    cy.get('#selectBank ul li div').contains(banco).click();
+    }
+
+  seleccionarTarjeta(tarjeta) {
+    cy.get('#inputCard').type(tarjeta);
+    cy.get('#selectCardByBank ul li span').contains(tarjeta).click();
+  }
+  
+  validarNoExisteCuota(cuotas) {
+    cy.get('#body-installments-table').should('not.contain', cuotas);
+  }
 } 
 
 export default ProductPage;

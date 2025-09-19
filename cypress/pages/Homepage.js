@@ -4,12 +4,9 @@ class HomePage {
   }
 
   buscarProducto(producto) {
-    cy.get('button[aria-label="Search"]').should('not.be.disabled').click();
-    cy.get('#search').should('be.visible').type(producto);
-  } 
-
-  clickBuscar(){
-    cy.get('button.action.search[aria-label="Search"]').click();
+    cy.get('button[aria-label="Search"]').click();
+    cy.get('#search').type(producto);
+    cy.get('#search_action button.action.search').should('not.be.disabled').click(); 
   } 
 }
 
