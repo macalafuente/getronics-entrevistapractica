@@ -30,6 +30,7 @@ cypress
 
 ## Instalación
 
+```bash
 1. Clonar el repositorio:
 
 git clone https://github.com/macalafuente/getronics-entrevistapractica.git
