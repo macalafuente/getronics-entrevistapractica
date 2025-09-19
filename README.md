@@ -27,11 +27,6 @@ cypress
 - **CP003**: Verificar medios de pago disponibles y selección de banco  
 - **CP004**: Navegar a "Ofertas", ordenar por precio y seleccionar el producto de menor precio  
 
-## Requisitos
-
-- Node.js >= 16.x  
-- npm o yarn  
-- Cypress instalado (`npm install cypress`)  
 
 ## Instalación
 
